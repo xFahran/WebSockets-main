@@ -55,7 +55,6 @@ const escapeHtml = (unsafe: string): string => {
 };
 
 app.use(express.static(join(__dirname, '../public')));
-
 app.use('/dist', express.static(join(__dirname, '../dist')));
 
 app.get('*', (req, res) => {
