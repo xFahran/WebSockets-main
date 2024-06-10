@@ -41,6 +41,9 @@ app.use('/dist', express_1.default.static((0, path_1.join)(__dirname, '../dist')
 app.get('*', (req, res) => {
     res.sendFile((0, path_1.join)(__dirname, '../public/index.html'));
 });
+app.get('*', (req, res) => {
+    res.sendFile((0, path_1.join)(__dirname, '../dist/script.js'));
+});
 wss.on('connection', (ws) => {
     let currentClient = null;
     ws.on('message', (message) => {

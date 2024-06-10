@@ -60,7 +60,9 @@ app.use('/dist', express.static(join(__dirname, '../dist')));
 app.get('*', (req, res) => {
   res.sendFile(join(__dirname, '../public/index.html'));
 });
-
+app.get('*', (req, res) => {
+  res.sendFile(join(__dirname, '../dist/script.js'));
+})
 wss.on('connection', (ws: WebSocket) => {
   let currentClient: Client | null = null;
 
